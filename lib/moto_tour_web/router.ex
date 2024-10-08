@@ -5,7 +5,7 @@ defmodule MotoTourWeb.Router do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
-    plug :put_root_layout, {MotoTourWeb.LayoutView, :root}
+   # plug :put_root_layout, {MotoTourWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
@@ -18,6 +18,7 @@ defmodule MotoTourWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    live "/home", HommeLive
   end
 
   # Other scopes may use custom stacks.
